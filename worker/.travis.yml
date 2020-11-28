@@ -1,6 +1,6 @@
 sudo: required
 services:
-   - docker
+   - test
 before_install:
    - docker build -t durga/react-test -f ./client/Dockerfile.dev
 script:
