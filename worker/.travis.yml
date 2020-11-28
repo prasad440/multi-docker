@@ -7,9 +7,9 @@ script:
    - docker run prasad/react-test npm test -- --coverage
 after_success:
    - docker build -t prasad/multi-client ./client
-   - docker build -t prasad/multi-client ./nginx
-   - docker build -t prasad/multi-client ./server
-   - docker build -t prasad/multi-client ./worker
+   - docker build -t prasad/multi-nginx ./nginx
+   - docker build -t prasad/multi-server ./server
+   - docker build -t prasad/multi-worker ./worker
    
    echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_ID" --password-stdin
    
